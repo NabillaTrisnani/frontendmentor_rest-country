@@ -53,13 +53,15 @@ class Home extends React.Component {
                             <ion-icon name="search"></ion-icon>
                             <input type="text" placeholder="Search for a country" />
                         </div>
-                        <select className="form__select">
-                            {
-                                regionList.map((region) => (
-                                    <option value={region}>{region}</option>
-                                ))
-                            }
-                        </select>
+                        <div className="form__select-wrapper">
+                            <select className="form__select">
+                                {
+                                    regionList.map((region) => (
+                                        <option value={region}>{region}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
                     </div>
                     <div className="row">
                         {

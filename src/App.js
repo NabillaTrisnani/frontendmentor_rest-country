@@ -4,7 +4,6 @@ import Navbar from './layout/Navbar'
 
 function App() {
   const [isActive, setActive] = useState("false");
-  const [theme, setTheme] = useState('');
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -12,20 +11,10 @@ function App() {
       localStorage.setItem('theme', 'light');
     } else {
       localStorage.setItem('theme', 'dark');
-    };
-    handleTheme()
-  };
-
-  const handleTheme = () => {
-    var currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'light') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
     }
   }
   return (
-    <div className={theme === 'light' ? "App light-theme" : "App dark-theme"}>
+    <div className={localStorage.getItem('theme') === 'light' ? "App light-theme" : "App dark-theme"}>
       <Navbar
         theme={handleToggle}
       />

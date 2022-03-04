@@ -10,7 +10,7 @@
 		box-shadow: $box-shadow;
 		width: 480px;
 		padding: 0 32px;
-		border: 4px;
+		border-radius: 8px;
 
 		ion-icon {
 			font-size: 18px;
@@ -26,7 +26,19 @@
 			letter-spacing: -0.01em;
 		}
 	}
+	&__select-wrapper {
+		position: relative;
+
+		&::after {
+			content: url("../../img/arrow-down-dark.svg");
+			top: 17px;
+			right: 21px;
+			position: absolute;
+		}
+	}
 	&__select {
+		-webkit-appearance: none;
+		appearance: none;
 		border: none;
 		outline: none;
 		box-shadow: $box-shadow;
@@ -35,6 +47,7 @@
 		letter-spacing: -0.01em;
 		width: 200px;
 		padding: 18px 19px;
+		border-radius: 8px;
 	}
 }
 
@@ -54,6 +67,17 @@
 				}
 			}
 		}
+		&__select-wrapper {
+			position: relative;
+
+			&::after {
+				content: url("../../img/arrow-down-dark.svg");
+			}
+		}
+		&__select {
+			background: $light-element;
+			color: $light-text;
+		}
 	}
 }
 
@@ -67,11 +91,23 @@
 			}
 			input {
 				color: $dark-text;
+				background-color: $dark-element;
 
 				&::placeholder {
 					color: $dark-text;
 				}
 			}
+		}
+		&__select-wrapper {
+			position: relative;
+
+			&::after {
+				content: url("../../img/arrow-down-light.svg");
+			}
+		}
+		&__select {
+			background: $dark-element;
+			color: $dark-text;
 		}
 	}
 }
