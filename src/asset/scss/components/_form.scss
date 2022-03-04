@@ -1,0 +1,77 @@
+.form {
+	display: flex;
+	margin-bottom: 33px;
+	align-items: center;
+	justify-content: space-between;
+
+	&__search {
+		display: flex;
+		align-items: center;
+		box-shadow: $box-shadow;
+		width: 480px;
+		padding: 0 32px;
+		border: 4px;
+
+		ion-icon {
+			font-size: 18px;
+			margin-right: 24px;
+		}
+		input {
+			border: none;
+			outline: none;
+			padding: 18px 0;
+			width: 100%;
+			font-weight: 600;
+			font-size: 14px;
+			letter-spacing: -0.01em;
+		}
+	}
+	&__select {
+		border: none;
+		outline: none;
+		box-shadow: $box-shadow;
+		font-weight: 600;
+		font-size: 14px;
+		letter-spacing: -0.01em;
+		width: 200px;
+		padding: 18px 19px;
+	}
+}
+
+.light-theme {
+	.form {
+		&__search {
+			background: $light-element;
+
+			ion-icon {
+				color: $light-text;
+			}
+			input {
+				color: $light-text;
+
+				&::placeholder {
+					color: hsl(0, 0%, 52%);
+				}
+			}
+		}
+	}
+}
+
+.dark-theme {
+	.form {
+		&__search {
+			background: $dark-element;
+
+			ion-icon {
+				color: $dark-text;
+			}
+			input {
+				color: $dark-text;
+
+				&::placeholder {
+					color: $dark-text;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@media (min-width: 576px) {
+	@for $i from 1 through $grid-columns {
+		.grid__sm-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media (min-width: 768px) {
+	@for $i from 1 through $grid-columns {
+		.grid__md-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media (min-width: 992px) {
+	@for $i from 1 through $grid-columns {
+		.grid__lg-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media (min-width: 1200px) {
+	@for $i from 1 through $grid-columns {
+		.grid__xl-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media (max-width: 576px) {
+	@for $i from 1 through $grid-columns {
+		.grid-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+
+// styles
+[class^="grid__xl-"] {
+	box-sizing: border-box;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+[class^="grid__lg-"] {
+	box-sizing: border-box;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+[class^="grid__md-"] {
+	box-sizing: border-box;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+[class^="grid__sm-"] {
+	box-sizing: border-box;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+[class^="grid-"] {
+	box-sizing: border-box;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.row {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	margin-right: -15px;
+	margin-left: -15px;
+}

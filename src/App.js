@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Routes from "./Routes";
+import Navbar from './layout/Navbar'
 
 function App() {
+  const [isActive, setActive] = useState("false");
+  const [theme, setTheme] = useState('');
+
+  const handleToggle = () => {
+    setActive(!isActive);
+    if (isActive === true) {
+      localStorage.setItem('theme', 'light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+    };
+    handleTheme()
+  };
+
+  const handleTheme = () => {
+    var currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={theme === 'light' ? "App light-theme" : "App dark-theme"}>
+      <Navbar
+        theme={handleToggle}
+      />
+      <Routes />
     </div>
   );
 }

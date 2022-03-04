@@ -1,0 +1,61 @@
+.card {
+	border-radius: 4px;
+	box-shadow: $box-shadow;
+	min-height: 22em;
+	margin: 15px 0;
+
+	&__img {
+		height: 160px;
+		border-radius: 4px 4px 0 0;
+		width: 100%;
+	}
+	&__body {
+		padding: 24px;
+	}
+	&__title {
+		font-weight: 800;
+		font-size: 19px;
+		letter-spacing: -0.03em;
+		margin-bottom: 22px;
+	}
+	&__text {
+		font-weight: 300;
+		font-size: 15px;
+		letter-spacing: -0.04em;
+		margin-bottom: 11px;
+	}
+}
+
+.light-theme {
+	.card {
+		background: $light-element;
+
+		&-body {
+			background: $light-element;
+
+			h1 {
+				color: $light-text;
+			}
+			p {
+				color: $light-text;
+			}
+		}
+	}
+}
+
+.dark-theme {
+	.card {
+		background: $dark-element;
+
+		&-body {
+			background: $dark-element;
+
+			h1 {
+				color: $dark-text;
+			}
+			p {
+				color: $dark-text;
+			}
+		}
+	}
+}
