@@ -5,7 +5,6 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            error: null,
             isLoaded: false,
             items: [],
             regionList: ["Africa", "America", "Asia", "Europe", "Oceania"]
@@ -22,65 +21,88 @@ class Home extends React.Component {
                         items: results
                     })
                     // console.log(results)
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: false,
-                        error
-                    })
                 }
             )
     }
     render() {
-        const { isLoaded, error, items, regionList } = this.state;
-        if (error) {
-            return (
-                <section className="home">
-                    This shit is error
-                </section>
-            );
-        } else if(!isLoaded) {
-            return (
-                <section className="home">
-                    Still loading lol
-                </section>
-            );
-        } else {
-            return (
-                <section className="home">
-                    <div className="form">
-                        <div className="form__search">
-                            <ion-icon name="search"></ion-icon>
-                            <input type="text" placeholder="Search for a country" />
-                        </div>
-                        <div className="form__select-wrapper">
-                            <select className="form__select">
-                                {
-                                    regionList.map((region) => (
-                                        <option value={region}>{region}</option>
-                                    ))
-                                }
-                            </select>
-                        </div>
+        const { isLoaded, items, regionList } = this.state;
+
+        return (
+            <section className="home">
+                <div className="form">
+                    <div className={isLoaded ? 'form__search' : 'form__search skeleton'}>
+                        <ion-icon name="search"></ion-icon>
+                        <input type="text" placeholder="Search for a country" disabled={isLoaded ? false : true} />
                     </div>
-                    <div className="row">
-                        {
-                            items.map((item) => (
-                                <div className="grid__md-3 grid__lg-3" key={item.name.official}>
-                                    <Card
-                                        img={item.flags.png}
-                                        title={item.name.common}
-                                        population={item.population}
-                                        region={item.region}
-                                        capital={item.capital}
-                                    />
-                                </div>
-                            ))
-                        }
+                    <div className={isLoaded ? 'form__select-wrapper' : 'form__select-wrapper skeleton'}>
+                        <select className="form__select" disabled={isLoaded ? false : true}>
+                            {
+                                regionList.map((region) => (
+                                    <option value={region} key={region}>{region}</option>
+                                ))
+                            }
+                        </select>
                     </div>
-                </section>
-            );            
-        }
+                </div>
+                <div className="row">
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                    <div className="grid__md-3 grid__lg-3">
+                        <Card
+                            className={isLoaded ? 'd-none' : 'skeleton'}
+                        />
+                    </div>
+                </div>
+                <div className="row">
+                    {
+                        items.map((item, index) => (
+                            <div className="grid__md-3 grid__lg-3" key={index}>
+                                <Card
+                                    img={item.flags.png}
+                                    title={item.name.common}
+                                    population={item.population}
+                                    region={item.region}
+                                    capital={item.capital}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        );            
     }
 }
 

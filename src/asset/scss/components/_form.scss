@@ -24,6 +24,35 @@
 			font-weight: 600;
 			font-size: 14px;
 			letter-spacing: -0.01em;
+			background-color: transparent;
+		}
+	}
+	&__search.skeleton {
+		color: transparent;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0;
+
+		ion-icon {
+			color: transparent !important;
+		}
+		input {
+			color: transparent !important;
+
+			&::placeholder {
+				color: transparent !important;
+			}
+		}
+		&::after {
+			content: "";
+			width: 50px;
+			position: absolute;
+			height: 100%;
+			margin: 0 -32px;
+			animation-name: gradient-animation;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			filter: blur(5px);
 		}
 	}
 	&__select-wrapper {
@@ -35,19 +64,42 @@
 			right: 21px;
 			position: absolute;
 		}
+		select {
+			-webkit-appearance: none;
+			appearance: none;
+			border: none;
+			outline: none;
+			box-shadow: $box-shadow;
+			font-weight: 600;
+			font-size: 14px;
+			letter-spacing: -0.01em;
+			width: 200px;
+			padding: 18px 19px;
+			border-radius: 8px;
+		}
 	}
-	&__select {
-		-webkit-appearance: none;
-		appearance: none;
-		border: none;
-		outline: none;
-		box-shadow: $box-shadow;
-		font-weight: 600;
-		font-size: 14px;
-		letter-spacing: -0.01em;
-		width: 200px;
-		padding: 18px 19px;
-		border-radius: 8px;
+	&__select-wrapper.skeleton {
+		color: transparent !important;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0;
+
+		&::after {
+			content: "" !important;
+			top: 0;
+			right: 0;
+			width: 50px;
+			position: absolute;
+			height: 100%;
+			animation-name: gradient-animation;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			filter: blur(5px);
+		}
+		select {
+			color: transparent !important;
+			background-color: transparent !important;
+		}
 	}
 }
 
@@ -67,16 +119,40 @@
 				}
 			}
 		}
+		&__search.skeleton {
+			background: #e2e2e2 !important;
+
+			&::after {
+				background: linear-gradient(
+					to right,
+					#e2e2e2 25%,
+					#d5d5d5 50%,
+					#e2e2e2 100%
+				);
+			}
+		}
 		&__select-wrapper {
 			position: relative;
 
 			&::after {
 				content: url("../../img/arrow-down-dark.svg");
 			}
+			select {
+				background: $light-element;
+				color: $light-text;
+			}
 		}
-		&__select {
-			background: $light-element;
-			color: $light-text;
+		&__select-wrapper.skeleton {
+			background: #e2e2e2 !important;
+
+			&::after {
+				background: linear-gradient(
+					to right,
+					#e2e2e2 25%,
+					#d5d5d5 50%,
+					#e2e2e2 100%
+				);
+			}
 		}
 	}
 }
@@ -91,11 +167,22 @@
 			}
 			input {
 				color: $dark-text;
-				background-color: $dark-element;
 
 				&::placeholder {
 					color: $dark-text;
 				}
+			}
+		}
+		&__search.skeleton {
+			background: $dark-element !important;
+
+			&::after {
+				background: linear-gradient(
+					to right,
+					$dark-element 25%,
+					$dark-background 50%,
+					$dark-element 100%
+				);
 			}
 		}
 		&__select-wrapper {
@@ -104,10 +191,31 @@
 			&::after {
 				content: url("../../img/arrow-down-light.svg");
 			}
+			select {
+				background: $dark-element;
+				color: $dark-text;
+			}
 		}
-		&__select {
-			background: $dark-element;
-			color: $dark-text;
+		&__select-wrapper.skeleton {
+			background: $dark-element !important;
+
+			&::after {
+				background: linear-gradient(
+					to right,
+					$dark-element 25%,
+					$dark-background 50%,
+					$dark-element 100%
+				);
+			}
 		}
+	}
+}
+
+@keyframes gradient-animation {
+	from {
+		left: 0%;
+	}
+	to {
+		left: 100%;
 	}
 }
