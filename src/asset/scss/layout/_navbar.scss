@@ -31,27 +31,6 @@
 	}
 }
 
-.light-theme {
-	.navbar {
-		background: $light-element;
-		color: $light-text;
-
-		button {
-			color: $light-text;
-		}
-	}
-}
-.dark-theme {
-	.navbar {
-		background: $dark-element;
-		color: $dark-text;
-
-		button {
-			color: $dark-text;
-		}
-	}
-}
-
 @media (max-width: 465px) {
 	.navbar {
 		padding: 37px 19px;

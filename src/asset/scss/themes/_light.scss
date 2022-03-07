@@ -1,4 +1,77 @@
 .light-theme {
 	background: $light-background;
 	color: $light-text;
+
+	//navbar
+	.navbar {
+		background: $light-element;
+		color: $light-text;
+
+		button {
+			color: $light-text;
+		}
+	}
+
+	//card
+	.card {
+		background: $light-element;
+
+		&-body {
+			background: $light-element;
+
+			h1 {
+				color: $light-text;
+			}
+			p {
+				color: $light-text;
+			}
+		}
+	}
+
+	.card.skeleton {
+		.card__img {
+			background-color: #e2e2e2;
+		}
+		.card__title {
+			@include skeleton-light;
+		}
+		.card__text {
+			@include skeleton-light;
+		}
+	}
+
+	//form
+	.form {
+		&__search {
+			background: $light-element;
+
+			ion-icon {
+				color: $light-text;
+			}
+			input {
+				color: $light-text;
+
+				&::placeholder {
+					color: hsl(0, 0%, 52%);
+				}
+			}
+		}
+		&__search.skeleton {
+			@include skeleton-light;
+		}
+		&__select-wrapper {
+			position: relative;
+
+			&::after {
+				content: url("../../img/arrow-down-dark.svg");
+			}
+			select {
+				background: $light-element;
+				color: $light-text;
+			}
+		}
+		&__select-wrapper.skeleton {
+			@include skeleton-light;
+		}
+	}
 }

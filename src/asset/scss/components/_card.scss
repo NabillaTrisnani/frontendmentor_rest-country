@@ -43,14 +43,7 @@
 		overflow: hidden;
 
 		&::after {
-			content: "";
-			width: 50px;
-			position: absolute;
-			height: 100%;
-			animation-name: gradient-animation;
-			animation-duration: 2s;
-			animation-iteration-count: infinite;
-			filter: blur(5px);
+			@include skeleton;
 		}
 	}
 	.card__text {
@@ -59,108 +52,7 @@
 		overflow: hidden;
 
 		&::after {
-			content: "";
-			width: 50px;
-			position: absolute;
-			height: 100%;
-			animation-name: gradient-animation;
-			animation-duration: 2s;
-			animation-iteration-count: infinite;
-			filter: blur(5px);
-		}
-	}
-}
-
-.light-theme {
-	.card {
-		background: $light-element;
-
-		&-body {
-			background: $light-element;
-
-			h1 {
-				color: $light-text;
-			}
-			p {
-				color: $light-text;
-			}
-		}
-	}
-
-	.card.skeleton {
-		.card__img {
-			background-color: #e2e2e2;
-		}
-		.card__title {
-			background-color: #e2e2e2;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					#e2e2e2 25%,
-					#d5d5d5 50%,
-					#e2e2e2 100%
-				);
-			}
-		}
-		.card__text {
-			background-color: #e2e2e2;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					#e2e2e2 25%,
-					#d5d5d5 50%,
-					#e2e2e2 100%
-				);
-			}
-		}
-	}
-}
-
-.dark-theme {
-	.card {
-		background: $dark-element;
-
-		&-body {
-			background: $dark-element;
-
-			h1 {
-				color: $dark-text;
-			}
-			p {
-				color: $dark-text;
-			}
-		}
-	}
-
-	.card.skeleton {
-		.card__img {
-			background-color: $dark-element;
-		}
-		.card__title {
-			background-color: $dark-background;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					$dark-background 25%,
-					$dark-element 50%,
-					$dark-background 100%
-				);
-			}
-		}
-		.card__text {
-			background-color: $dark-background;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					$dark-background 25%,
-					$dark-element 50%,
-					$dark-background 100%
-				);
-			}
+			@include skeleton;
 		}
 	}
 }

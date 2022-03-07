@@ -44,15 +44,8 @@
 			}
 		}
 		&::after {
-			content: "";
-			width: 50px;
-			position: absolute;
-			height: 100%;
+			@include skeleton;
 			margin: 0 -32px;
-			animation-name: gradient-animation;
-			animation-duration: 2s;
-			animation-iteration-count: infinite;
-			filter: blur(5px);
 		}
 	}
 	&__select-wrapper {
@@ -85,128 +78,13 @@
 		border-radius: 0;
 
 		&::after {
-			content: "" !important;
+			@include skeleton;
 			top: 0;
 			right: 0;
-			width: 50px;
-			position: absolute;
-			height: 100%;
-			animation-name: gradient-animation;
-			animation-duration: 2s;
-			animation-iteration-count: infinite;
-			filter: blur(5px);
 		}
 		select {
 			color: transparent !important;
 			background-color: transparent !important;
-		}
-	}
-}
-
-.light-theme {
-	.form {
-		&__search {
-			background: $light-element;
-
-			ion-icon {
-				color: $light-text;
-			}
-			input {
-				color: $light-text;
-
-				&::placeholder {
-					color: hsl(0, 0%, 52%);
-				}
-			}
-		}
-		&__search.skeleton {
-			background: #e2e2e2 !important;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					#e2e2e2 25%,
-					#d5d5d5 50%,
-					#e2e2e2 100%
-				);
-			}
-		}
-		&__select-wrapper {
-			position: relative;
-
-			&::after {
-				content: url("../../img/arrow-down-dark.svg");
-			}
-			select {
-				background: $light-element;
-				color: $light-text;
-			}
-		}
-		&__select-wrapper.skeleton {
-			background: #e2e2e2 !important;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					#e2e2e2 25%,
-					#d5d5d5 50%,
-					#e2e2e2 100%
-				);
-			}
-		}
-	}
-}
-
-.dark-theme {
-	.form {
-		&__search {
-			background: $dark-element;
-
-			ion-icon {
-				color: $dark-text;
-			}
-			input {
-				color: $dark-text;
-
-				&::placeholder {
-					color: $dark-text;
-				}
-			}
-		}
-		&__search.skeleton {
-			background: $dark-element !important;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					$dark-element 25%,
-					$dark-background 50%,
-					$dark-element 100%
-				);
-			}
-		}
-		&__select-wrapper {
-			position: relative;
-
-			&::after {
-				content: url("../../img/arrow-down-light.svg");
-			}
-			select {
-				background: $dark-element;
-				color: $dark-text;
-			}
-		}
-		&__select-wrapper.skeleton {
-			background: $dark-element !important;
-
-			&::after {
-				background: linear-gradient(
-					to right,
-					$dark-element 25%,
-					$dark-background 50%,
-					$dark-element 100%
-				);
-			}
 		}
 	}
 }

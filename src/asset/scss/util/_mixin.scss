@@ -1,0 +1,35 @@
+@mixin skeleton {
+	content: "" !important;
+	width: 50px;
+	position: absolute;
+	height: 100%;
+	animation-name: gradient-animation;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	filter: blur(5px);
+}
+@mixin skeleton-dark {
+	background: $dark-element !important;
+
+	&::after {
+		background: linear-gradient(
+			to right,
+			$dark-element 25%,
+			$dark-background 50%,
+			$dark-element 100%
+		);
+	}
+}
+
+@mixin skeleton-light {
+	background-color: #e2e2e2;
+
+	&::after {
+		background: linear-gradient(
+			to right,
+			#e2e2e2 25%,
+			#d5d5d5 50%,
+			#e2e2e2 100%
+		);
+	}
+}
