@@ -45,42 +45,42 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
                     </div>
-                    <div className="grid__md-3 grid__lg-3">
+                    <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                         <Card
                             className={isLoaded ? 'd-none' : 'skeleton'}
                         />
@@ -89,7 +89,7 @@ class Home extends React.Component {
                 <div className="row">
                     {
                         items.map((item, index) => (
-                            <div className="grid__md-3 grid__lg-3" key={index}>
+                            <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3" key={index}>
                                 <Card
                                     img={item.flags.png}
                                     title={item.name.common}

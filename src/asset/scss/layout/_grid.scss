@@ -1,32 +1,32 @@
-@media (min-width: 576px) {
-	@for $i from 1 through $grid-columns {
-		.grid__sm-#{$i} {
-			grid-column: span $i;
-		}
-	}
-}
-@media (min-width: 768px) {
-	@for $i from 1 through $grid-columns {
-		.grid__md-#{$i} {
-			grid-column: span $i;
-		}
-	}
-}
-@media (min-width: 992px) {
-	@for $i from 1 through $grid-columns {
-		.grid__lg-#{$i} {
-			grid-column: span $i;
-		}
-	}
-}
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
 	@for $i from 1 through $grid-columns {
 		.grid__xl-#{$i} {
 			grid-column: span $i;
 		}
 	}
 }
-@media (max-width: 576px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	@for $i from 1 through $grid-columns {
+		.grid__lg-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	@for $i from 1 through $grid-columns {
+		.grid__md-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+	@for $i from 1 through $grid-columns {
+		.grid__sm-#{$i} {
+			grid-column: span $i;
+		}
+	}
+}
+@media only screen and (max-width: 576px) {
 	@for $i from 1 through $grid-columns {
 		.grid-#{$i} {
 			grid-column: span $i;
