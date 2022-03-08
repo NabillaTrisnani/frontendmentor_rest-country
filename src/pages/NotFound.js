@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 class NotFound extends React.Component {
     constructor(props) {
@@ -7,7 +8,15 @@ class NotFound extends React.Component {
     }
     render() {
         return (
-            404
+            <section className='not-found'>
+                <div className='card'>
+                    <div className='card__body'>
+                        <h1>404</h1>
+                        <h2>Oops! Page not found</h2>
+                        <Link to="/" className='btn-back'>Back to Home</Link>
+                    </div>
+                </div>
+            </section>
         );
     }
 }

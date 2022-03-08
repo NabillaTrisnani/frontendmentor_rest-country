@@ -8,6 +8,7 @@
 @import "./base/display";
 
 //layout
+@import "./layout/app";
 @import "./layout/grid";
 @import "./layout/navbar";
 @import "./layout/section";
@@ -15,6 +16,9 @@
 //components
 @import "./components/card";
 @import "./components/form";
+
+//pages
+@import "./pages/notfound";
 
 //theme
 @import "./themes/dark";
