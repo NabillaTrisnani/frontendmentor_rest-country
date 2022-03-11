@@ -1,0 +1,13 @@
+.home {
+	.card-no-data {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.card__body {
+			h1 {
+				font-size: 45px;
+			}
+		}
+	}
+}
