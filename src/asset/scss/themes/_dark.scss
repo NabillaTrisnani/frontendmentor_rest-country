@@ -33,10 +33,10 @@
 			background-color: $dark-element;
 		}
 		.card__title {
-			@include skeleton-dark;
+			@include skeleton-card-dark;
 		}
 		.card__text {
-			@include skeleton-dark;
+			@include skeleton-card-dark;
 		}
 	}
 

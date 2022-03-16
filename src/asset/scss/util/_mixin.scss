@@ -8,6 +8,7 @@
 	animation-iteration-count: infinite;
 	filter: blur(5px);
 }
+
 @mixin skeleton-dark {
 	background: $dark-element !important;
 
@@ -17,6 +18,19 @@
 			$dark-element 25%,
 			$dark-background 50%,
 			$dark-element 100%
+		);
+	}
+}
+
+@mixin skeleton-card-dark {
+	background: $dark-background !important;
+
+	&::after {
+		background: linear-gradient(
+			to right,
+			$dark-background 25%,
+			$dark-element 50%,
+			$dark-background 100%
 		);
 	}
 }
