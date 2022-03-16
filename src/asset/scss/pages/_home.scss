@@ -11,3 +11,13 @@
 		}
 	}
 }
+@media (max-width: 576px) {
+	.home {
+		padding-left: 24px;
+		padding-right: 24px;
+
+		.form__search {
+			margin-bottom: 30px;
+		}
+	}
+}

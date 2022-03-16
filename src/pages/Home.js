@@ -45,7 +45,7 @@ export default function Home() {
 
     return (
         <section className="home">
-            <form className="form">
+            <form className="form flex flex-wrap">
                 <div className={isLoaded ? 'form__search' : 'form__search skeleton'}>
                     <ion-icon name="search"></ion-icon>
                     <input type="text" placeholder="Search for a country" disabled={isLoaded ? false : true} value={searchInput} onChange={handleChangeInput} />
@@ -111,7 +111,7 @@ export default function Home() {
                                 <Link to={`${item.name.common.toLowerCase()}`}>
                                     <Card
                                         img={item.flags.png}
-                                        title={item.name.common}
+                                        title={item.name.official}
                                         population={item.population}
                                         region={item.region}
                                         capital={item.capital}
