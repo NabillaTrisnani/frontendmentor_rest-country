@@ -74,4 +74,36 @@
 			@include skeleton-light;
 		}
 	}
+
+	//button
+	.btn {
+		background-color: $light-element;
+		color: $light-text;
+
+		&.skeleton {
+			color: transparent;
+
+			@include skeleton-light;
+		}
+	}
+
+	//page detail
+	.detail {
+		.item__image.skeleton {
+			cursor: default;
+			@include skeleton-light;
+
+			img {
+				visibility: hidden;
+			}
+		}
+		h1.skeleton {
+			cursor: default;
+			@include skeleton-light;
+		}
+		p.skeleton {
+			cursor: default;
+			@include skeleton-light;
+		}
+	}
 }

@@ -9,14 +9,14 @@
 	filter: blur(5px);
 }
 @mixin skeleton-dark {
-	background: $dark-background !important;
+	background: $dark-element !important;
 
 	&::after {
 		background: linear-gradient(
 			to right,
-			$dark-background 25%,
-			$dark-element 50%,
-			$dark-background 100%
+			$dark-element 25%,
+			$dark-background 50%,
+			$dark-element 100%
 		);
 	}
 }

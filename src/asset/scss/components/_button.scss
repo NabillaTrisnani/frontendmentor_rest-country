@@ -1,0 +1,22 @@
+.btn {
+	border-radius: 4px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	padding: 9px;
+	min-width: 136px;
+	width: fit-content;
+	text-align: center;
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.07);
+
+	&.skeleton {
+		box-shadow: none;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0;
+
+		&::after {
+			@include skeleton;
+		}
+	}
+}

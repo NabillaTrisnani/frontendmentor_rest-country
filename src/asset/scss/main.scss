@@ -6,6 +6,7 @@
 @import "./base/reset";
 @import "./base/typography";
 @import "./base/display";
+@import "./base/flex";
 
 //layout
 @import "./layout/app";
@@ -14,12 +15,15 @@
 @import "./layout/section";
 
 //components
+@import "./components/badge";
+@import "./components/button";
 @import "./components/card";
 @import "./components/form";
 
 //pages
 @import "./pages/notfound";
 @import "./pages/home";
+@import "./pages/detail";
 
 //theme
 @import "./themes/dark";

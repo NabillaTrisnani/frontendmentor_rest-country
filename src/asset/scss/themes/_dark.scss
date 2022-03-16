@@ -74,4 +74,42 @@
 			@include skeleton-dark;
 		}
 	}
+
+	//badge
+	.badge {
+		background-color: $dark-element;
+		color: $dark-text;
+	}
+
+	//button
+	.btn {
+		background-color: $dark-element;
+		color: $dark-text;
+
+		&.skeleton {
+			color: transparent;
+
+			@include skeleton-dark;
+		}
+	}
+
+	//page detail
+	.detail {
+		.item__image.skeleton {
+			cursor: default;
+			@include skeleton-dark;
+
+			img {
+				visibility: hidden;
+			}
+		}
+		h1.skeleton {
+			cursor: default;
+			@include skeleton-dark;
+		}
+		p.skeleton {
+			cursor: default;
+			@include skeleton-dark;
+		}
+	}
 }
