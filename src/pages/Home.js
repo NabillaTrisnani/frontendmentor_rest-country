@@ -9,7 +9,7 @@ export default function Home() {
     const [filteredItems, setFilteredItems] = useState([]);
     const [searchInput, setSearchInput] = useState('');
     const [selectInput, setSelectInput] = useState('');
-    const regionList = ["Africa", "America", "Asia", "Europe", "Oceania"];
+    const regionList = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
     useEffect(() => {
         getData();
@@ -40,6 +40,7 @@ export default function Home() {
             (!selectInput || item.region === selectInput)
         );
         setFilteredItems(result);
+        console.log(result);
         }, [searchInput, items, selectInput]);
 
     return (
@@ -63,48 +64,48 @@ export default function Home() {
             <div className="row">
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
                 <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3">
                     <Card
-                        className={isLoaded ? 'd-none' : 'skeleton'}
+                        className={isLoaded ? 'hidden' : 'skeleton'}
                     />
                 </div>
             </div>
             <div className="row">
                 {
-                    filteredItems.length > 1 ? (
+                    filteredItems.length > 0 ? (
                         filteredItems.map((item, index) => (
                             <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3" key={index}>
                                 <Link to={`${item.name.common.toLowerCase()}`}>
@@ -120,7 +121,7 @@ export default function Home() {
                         ))
                     ) : (
                         <div className="grid-12 grid__sm-12 grid__md-12 grid__lg-12 grid__xl-12">
-                            <div className="card card-no-data">
+                            <div className={`card card-no-data ${isLoaded ? '' : 'hidden'}`}>
                                 <div className="card__body">
                                     <h1>Country not found</h1>
                                 </div>
