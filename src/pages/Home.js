@@ -108,10 +108,10 @@ export default function Home() {
                     filteredItems.length > 0 ? (
                         filteredItems.map((item, index) => (
                             <div className="grid-12 grid__sm-6 grid__md-4 grid__lg-3 grid__xl-3" key={index}>
-                                <Link to={`${item.name.common.toLowerCase()}`}>
+                                <Link to={`${item.cca3.toLowerCase()}`}>
                                     <Card
                                         img={item.flags.png}
-                                        title={item.name.official}
+                                        title={item.name.common}
                                         population={item.population}
                                         region={item.region}
                                         capital={item.capital}

@@ -59,10 +59,14 @@
 	.item__footer {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 		margin-top: 40px;
 
 		p {
-			margin-bottom: 0;
+			margin: 5px 0;
+		}
+		.badge {
+			margin: 5px;
 		}
 	}
 }

@@ -9,7 +9,7 @@ export default function DetailHome() {
     // console.log(name);
 
     useEffect(() => {
-        fetch(`https://restcountries.com/v3.1/name/${name}`)
+        fetch(`https://restcountries.com/v3.1/alpha/${name}`)
             .then(res => res.json())
             .then(
                 (results) => {
