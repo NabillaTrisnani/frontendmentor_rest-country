@@ -37,7 +37,7 @@ export default function DetailHome() {
                         <div className="grid-12 grid__sm-6 grid__md-6 grid__lg-6 grid__xl-6">
                             <div className="row">
                                 <div className="grid-12 grid__sm-12 grid__md-12 grid__lg-12 grid__xl-12">
-                                    <h1>{item.name.official}</h1>
+                                    <h1>{item.name.common}</h1>
                                 </div>
                                 <div className="grid-12 grid__sm-12 grid__md-6 grid__lg-6 grid__xl-6">
                                     <article className="item__main-info">
@@ -61,7 +61,9 @@ export default function DetailHome() {
                                         <div className="flex flex-wrap">
                                             {
                                                 item.borders ? item.borders.map((item, index) => (
-                                                    <div className="badge" key={index}>{item}</div>
+                                                    <Link to={`/${item.toLowerCase()}`}>
+                                                        <div className="badge" key={index}>{item}</div>
+                                                    </Link>
                                                 )) : '-'
                                             }
                                         </div>
